@@ -1,6 +1,6 @@
 #ifndef HEAP_H
 #define HEAP_H
-#include <math.h>
+#include <cmath>
 #include <iostream>
 
 using namespace std;
@@ -21,6 +21,7 @@ class Heap{
 		void InOrder();
 		void PreOrder();
 		void Anchura();
+		int eliminar(int );
 		
 	
 	private:

@@ -3,9 +3,9 @@
 
 using namespace std;
 int main(){
-	int n=10;
+	int n=6;
 	int l=4;
-	int A[n]={90,75,100,60,65,95,92,1,2,3};
+	int A[n]={90,75,100,60,65,95};
 	
 	
 	Heap H(n);
@@ -25,8 +25,8 @@ int main(){
    H.imprimir();
    cout<<"el tamaño del arbol es "<<H.getSize()<<endl;*/
    cout<<"*****************************************************"<<endl;
-   cout<<endl;
-   H.Anchura();
-    
+   H.insertar(92);
+   H.imprimir();
+   H.insertar(34);
 return 0;
 }

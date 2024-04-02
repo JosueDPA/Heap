@@ -1,8 +1,10 @@
 #include "Heap.hpp"
 
 Heap::Heap(int tam){
-	this->maxtam=tam;
-	this->H=new int(tam);
+	int aux;
+	aux=ceil(log2(tam));
+	this->maxtam=pow(2,aux)-1;
+	this->H=new int(this->maxtam);
 }
 
 void Heap::insertar(int v){
@@ -188,4 +190,14 @@ void Heap::Anchura(){
 		
 	
 
+}
+int Heap::eliminar(int i){
+	int E;
+	E=H[i];
+	H[i]=H[this->size-1];
+	this->size=size-1;
+	subir(i);
+	bajar(i);
+	return E;
+	
 }
