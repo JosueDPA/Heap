@@ -12,11 +12,6 @@ class Heap{
 		void insertar(int);
 		int obtenerMax();
 		void imprimir();
-		int getPadre(int );
-		int getElemento(int );
-		int getI(int);
-		int getD(int);
-		int getSize();
 		void PostOrder();
 		void InOrder();
 		void PreOrder();

@@ -14,19 +14,16 @@ int main(){
 	}
     H.imprimir();
     
-    /*cout<<"ingrese el nodo para calcular su padre"<<endl;
-    cout<<"error aqui"<<endl;
-    cout<<"el hijo de "<<H.getElemento(l)<<"  es "<<H.getI(l)<<endl;
-    cout<<"el tamaño del arbol es "<<H.getSize()<<endl;
-    cout<<H.getElemento(9)<<endl;
+    cout<<"**********************************************************"<<endl;
+    cout<<endl;
     
    H.obtenerMax();
    cout<<endl;
    H.imprimir();
-   cout<<"el tamaño del arbol es "<<H.getSize()<<endl;*/
    cout<<"*****************************************************"<<endl;
    H.insertar(92);
    H.imprimir();
    H.insertar(34);
+   H.Anchura();
 return 0;
 }
