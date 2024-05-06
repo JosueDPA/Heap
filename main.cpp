@@ -25,5 +25,9 @@ int main(){
    H.imprimir();
    H.insertar(34);
    H.Anchura();
+   cout<<endl;
+   cout<<"*****************************************************"<<endl;
+   H.eliminar(2);
+   H.Anchura();
 return 0;
 }

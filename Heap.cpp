@@ -43,50 +43,20 @@ int Heap::obtenerMax(){
 }
 
 void Heap::bajar(int i){
-//variables de cambio para condicionales
-int l=i;
-int r=i;
-	
-int max;//variable de condicional
-int L=hijoI(i);//calculo de posicion de hijo izquierdo si existe
-int R=hijoD(i);//calculo de posicion de hijo derecho si existe
-int aux;//variable auxiliar
-
-if(L < size && H[L] >= H[l]){ // se pregunta si el hijo izquierdo existe y si es mayor a nuestro nodo actual
-	l=L;//se cambia l con la nocion de posible cambio en el hijo izquierdo	
+int aux=H[i];
+int Maxindex=i;
+int n=this->size;
+if(hijoI(i)<n && H[hijoI(i)]>H[Maxindex]){
+	Maxindex=hijoI(i);
 }
-
-if(R < size && H[R] >= H[r]){// se pregunta si el hijo derecho existe y si es mayor a nuestro nodo actual
-	r=R;//se cambia r con la nocion de posible cambio en el hijo derecho
+if(hijoD(i)<n && H[hijoD(i)]>H[Maxindex]){
+	Maxindex=hijoD(i);
 }
-
-if(l == i && r!=i){//este es para cuando el hijo derecho existe y es mayor al padre
-	aux= H[i];//toma el valor del padre
-	H[i]= H[r];//padre toma valor del hijo
-	H[r]= aux;//hijo toma valor del padre
-	
-	bajar(r);//se verifica la condicion de heap con el hijo
-	}
-    if(l != i && r==i){//este es para cuando el hijo izquierdo existe y es mayor al padre
-	   aux= H[i];//toma el valor del padre
-	   H[i]= H[l];//padre toma valor del hijo
-	   H[l]= aux;//hijo toma valor del padre
-	   
-	   bajar(l);//se verifica la condicion de heap con el hijo
-	}
-
-   if(l != i && r!=i){// este es para el caso que los dos hijos existen y los dos son mayores que el padre
-	  if(H[l]>=H[r]){//se calcula cual es mayor
-		  max=l;
-	   }else{
-		  max=r;
-	   }//anterior se toma la posicion del maximo
-	  aux= H[i];//toma el valor del padre
-	  H[i]= H[max];//toma el valor del maximo de los hijos
-	  H[max]=aux;//el hijo que se reemplazo toma el valor del padre
-	  
-	  bajar(max);//se verifica la condion del heap con el hijo
-  }
+if(i!=Maxindex){
+	H[i]=H[Maxindex];
+	H[Maxindex]=aux;
+	bajar(Maxindex);
+}
 }
 int Heap::hijoI(int i){//funcion para calcular el hijo izquierdo de i
 	return (2*i+1);
